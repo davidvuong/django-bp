@@ -32,3 +32,7 @@ class User(BaseModel,
 
     def get_short_name(self):
         return self.email
+
+    @property
+    def is_staff(self):
+        return self.is_admin

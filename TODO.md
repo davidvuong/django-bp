@@ -2,7 +2,7 @@
 - Environment separation
 - Mailgun integration (either using `send_mail` or something else)
 - Celery + RabbitMQ, SQS
-- django-admin
+- (done) django-admin
 - PostgreSQL instead of SQLite3 (maybe)
 - Templates configuration (each app should have their own templates/ directory)
 - DRF token authentication
@@ -16,3 +16,4 @@
 - Opbeat integration for error/performance logging
 - Add fabric or alternative for wrap around `python manage.py <x>`
 - Caching via Redis
+- Add authentication to user viewset change-password, change-email+confirm-email, forgot password
