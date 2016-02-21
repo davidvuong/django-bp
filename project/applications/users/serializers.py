@@ -7,4 +7,4 @@ from project.applications.users.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = User
-        fields = ('email', 'is_admin', 'is_active',)
+        fields = ('id', 'email', 'is_admin', 'is_active',)
