@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 from django.contrib.auth.models import AbstractBaseUser
@@ -14,7 +15,7 @@ class User(BaseModel,
            PermissionsMixin):
 
     email = models.EmailField(
-        verbose_name='email address',
+        verbose_name=_('email address'),
         max_length=255,
         unique=True,
     )

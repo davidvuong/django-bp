@@ -2,7 +2,7 @@
 
 **Welcome to Django bp!**
 
-This is a kickstarter project to get you setup with Django 1.9 and Django REST Framework 3.3 using Python 2.7. All other dependencies can be found in the `requirements.txt` file. Please continue reading for the setup guide.
+This is a kickstart project to get you setup with Django 1.9 and Django REST Framework 3.3 using Python 2.7. All other dependencies can be found in the `requirements.txt` file. Please continue reading for the setup guide.
 
 ## System Requirements
 
