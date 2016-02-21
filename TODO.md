@@ -15,3 +15,4 @@
 - CORS
 - Opbeat integration for error/performance logging
 - Add fabric or alternative for wrap around `python manage.py <x>`
+- Caching via Redis
