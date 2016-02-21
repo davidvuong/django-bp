@@ -1,4 +1,4 @@
-- Add file logging configuration
+- (done) Add file logging configuration
 - Environment separation
 - Mailgun integration (either using `send_mail` or something else)
 - Celery + RabbitMQ, SQS
