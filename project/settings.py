@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken',
     'django_extensions',
 
     'project.applications.common',
@@ -69,7 +70,7 @@ DATABASES = {
 }
 
 # Password validation
-# @see https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
+# @see: https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -86,11 +87,24 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Custom authentication user model
-# @see https://docs.djangoproject.com/en/1.9/topics/auth/customizing/#substituting-a-custom-user-model
+# @see: https://docs.djangoproject.com/en/1.9/topics/auth/customizing/#substituting-a-custom-user-model
 AUTH_USER_MODEL = 'users.User'
 
+# Django REST Framework (DRF) configuration
+# @see: http://www.django-rest-framework.org/
+REST_FRAMEWORK = {
+    # @see: http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    # @see: http://www.django-rest-framework.org/api-guide/permissions/
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+
 # Logging configuration
-# @see https://docs.djangoproject.com/en/1.9/topics/logging/
+# @see: https://docs.djangoproject.com/en/1.9/topics/logging/
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -131,7 +145,7 @@ LOGGING = {
 }
 
 # Internationalization
-# @see https://docs.djangoproject.com/en/1.9/topics/i18n/
+# @see: https://docs.djangoproject.com/en/1.9/topics/i18n/
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 USE_L10N = True
@@ -140,5 +154,5 @@ TIME_ZONE = 'UTC'
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images etc.)
-# @see https://docs.djangoproject.com/en/1.9/howto/static-files/
+# @see: https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = '/static/'
