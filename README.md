@@ -85,6 +85,16 @@ python manage.py runserver
 
 **Note:** Please make sure you're in the `/django-bp/ng/` directory when running any client-side related commands.
 
+Finally, you can access the `django-bp` frontend/backend by navigating to these urls:
+
+```bash
+# AngularJS frontend app:
+open http://localhost:8080
+
+# Django + DRF REST API:
+open http://localhost:8000
+```
+
 ## Online Resources
 
 Unfortunately there aren't currently any resources online on how to setup a project which uses AngularJS + ES6 + Django + DRF but I have found resources that help on different areas:
