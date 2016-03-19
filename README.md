@@ -24,7 +24,7 @@ For all other dependencies refer to the `project/requirements.txt` and `ng/packa
   ```bash
   sudo easy_install pip
   sudo pip install virtualenv virtualenvwrapper
-  
+
   mkvirtualenv django-bp
   add2virtualenv project
   ```
@@ -32,7 +32,7 @@ For all other dependencies refer to the `project/requirements.txt` and `ng/packa
 1. Install all the Python project dependencies:
 
   ```bash
-  pip install requirements.txt
+  pip install -r requirements.txt
   ```
 
 1. Install Node and all JavaScript project dependencies:
@@ -40,7 +40,7 @@ For all other dependencies refer to the `project/requirements.txt` and `ng/packa
   ```bash
   nvm install 5.8.0
   nvm use 5.8.0
-  
+
   cd django-bp/ng/
   npm install
   ```
