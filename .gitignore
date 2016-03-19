@@ -5,8 +5,10 @@ __pycache__
 *.log
 pip-log.txt
 
+bundle.js
+node_modules/
+
 media/
-static/
 tmp/
 
 db.sqlite3

@@ -42,10 +42,20 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'project.urls'
 
+# Static files (CSS, JavaScript, Images etc.)
+# @see: https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'project/static/'),
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'project/static/'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -152,7 +162,3 @@ USE_L10N = True
 
 TIME_ZONE = 'UTC'
 USE_TZ = True
-
-# Static files (CSS, JavaScript, Images etc.)
-# @see: https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_URL = '/static/'
