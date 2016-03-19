@@ -19,43 +19,35 @@ For all other dependencies refer to the `project/requirements.txt` and `ng/packa
   git clone https://github.com/davidvuong/django-bp
   ```
 
-1. Install `pip`, `virtualenv`, and `virtualenvwrapper`:
+1. Create a virtualenv for your project:
 
   ```bash
   sudo easy_install pip
   sudo pip install virtualenv virtualenvwrapper
-  ```
-
-1. Create a Python virtualenv using `virtualenvwrapper`:
-
-  ```bash
+  
   mkvirtualenv django-bp
   add2virtualenv project
-  workon django-bp
   ```
 
-1. Install all Python dependencies:
+1. Install all the Python project dependencies:
 
   ```bash
   pip install requirements.txt
   ```
 
-1. Install the latest version of Node (currently v5.8):
+1. Install Node and all JavaScript project dependencies:
 
   ```bash
-  nvm install 5.8
-  nvm use 5.8
-  ```
-
-1. `cd` into `ng/` and install JavaScript dependencies:
-
-  ```bash
+  nvm install 5.8.0
+  nvm use 5.8.0
+  
+  cd django-bp/ng/
   npm install
   ```
 
 ## Configuring Django
 
-Most of the configuration is already done (`/project/settings.py`) however, there is a bit of initial manual configuration that need to be handled.
+Most of the configuration has already been completed (`/project/settings.py`) however, there are commands you need to run as a bit of initial configuration before you can start hacking.
 
 1. Export the `DJANGO_SETTINGS_MODULE` environment variable.
 
@@ -63,36 +55,32 @@ Most of the configuration is already done (`/project/settings.py`) however, ther
   export DJANGO_SETTINGS_MODULE='project.settings'
   ```
 
-1. Next, you'll need to run the database migrations:
+1. Run the database migrations:
 
   ```bash
   python manage.py migrate
   ```
 
-1. Lastly, you'll need to create a `superuser`:
+1. Create a `superuser` to access `django-admin`:
 
   ```bash
   python manage.py createsuperuser
   ```
 
-In regards to the database, this kickstart has Django running on SQLite but you can obviously change it to use any RDBMS or NoSQL database. For simplicity and ease of configuration, I'm using SQLite.
+In regards to the database, this kickstart has Django running on SQLite but you can obviously change it to use any RDBMS or NoSQL database you like. For simplicity and ease of configuration, I'm using SQLite.
 
 ## Executing `django-bp`
 
-Whilst developing, there are 2 servers that you need to run. The first is `webpack-dev-server` and the other is your Django server:
+Whilst developing, there are 2 servers that you need to run. The first is `webpack-dev-server` and the other is your Django server. I like having everything running on the same window but split into screens.
 
 ![](assets/terminal.png)
 
-1. The first command bundles your client and starts the `webpack-dev-server`:
+```bash
+# Bundles your client and starts the `webpack-dev-server`:
+npm start
 
-  ```bash
-  npm start
-  ```
+# Starts your Django server via the standard `manage.py`:
+python manage.py runserver
+```
 
-1. The second command starts your Django server:
-
-  ```bash
-  python manage.py runserver
-  ```
-
-*Note: Please make sure that when running any client-side related commands to be in the django-bp/ng/ directory.*
+**Note:** Please make sure you're in the `/django-bp/ng/` directory when running any client-side related commands.
