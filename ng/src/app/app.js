@@ -20,10 +20,14 @@ config.$inject = ['$urlRouterProvider', '$locationProvider'];
 function run($rootScope, $state, authentication) {
   $rootScope.$on('$stateChangeStart', function (event, toState) {
     const isAuthorized = authentication.isAuthorized();
+
+    // Redirect to login page if not authenticated.
     if (!isAuthorized && toState.name !== 'login') {
       event.preventDefault();
       return $state.transitionTo('login');
     }
+
+    // Redirect to home page if authenticated.
     if (toState.name === 'login' && isAuthorized) {
       event.preventDefault();
       return $state.transitionTo('home');

@@ -6,6 +6,7 @@ export default class HomeController {
     this.logout = this.logout.bind(this);
   }
 
+  /* Log the user out, refresh page, and delegate redirect. */
   logout() {
     this.authentication.logout();
     location.reload(true);

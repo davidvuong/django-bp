@@ -18,6 +18,7 @@ class Authentication {
     return !!this.token;
   }
 
+  /* Makes a HTTP request to authorize with email/password. */
   authorize(email, password) {
     const deferred = this.$q.defer();
     if (!email || !password) {
@@ -39,6 +40,7 @@ class Authentication {
     return deferred.promise;
   }
 
+  /* Makes a HTTP request to authorize the user with just the token. */
   authorizeWithToken() {
     const deferred = this.$q.defer();
     if (this.hasAuthorized()) {
