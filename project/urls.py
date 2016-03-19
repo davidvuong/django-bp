@@ -9,9 +9,11 @@ from rest_framework_extensions.routers import (
 )
 
 from project.applications.users.views import UserViewSet
+from project.applications.authentication.views import AuthenticationViewSet
 
 api_router = SimpleRouter()
 api_router.register(r'users', UserViewSet)
+api_router.register(r'auth', AuthenticationViewSet)
 
 urlpatterns = [
     url(r'^api/', include(api_router.urls)),

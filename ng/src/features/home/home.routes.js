@@ -1,12 +1,11 @@
-'use strict';
-
-export default function routes($stateProvider) {
+export default function routes($stateProvider, resolverProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
       template: require('./home.html'),
       controller: 'HomeController',
-      controllerAs: 'home'
+      controllerAs: 'home',
+      resolve: { __: resolverProvider.$get }
     });
 }
-routes.$inject = ['$stateProvider'];
+routes.$inject = ['$stateProvider', 'resolverProvider'];

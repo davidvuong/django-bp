@@ -24,12 +24,16 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_extensions',
+    'corsheaders',
 
     'project.applications.common',
-    'project.applications.users',
+    'project.applications.authentication',
+    'project.applications.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -162,3 +166,7 @@ USE_L10N = True
 
 TIME_ZONE = 'UTC'
 USE_TZ = True
+
+# CORS:
+# @see: https://github.com/ottoyiu/django-cors-headers
+CORS_ORIGIN_ALLOW_ALL = True
