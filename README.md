@@ -84,3 +84,11 @@ python manage.py runserver
 ```
 
 **Note:** Please make sure you're in the `/django-bp/ng/` directory when running any client-side related commands.
+
+## Online Resources
+
+Unfortunately there aren't currently any resources online on how to setup a project which uses AngularJS + ES6 + Django + DRF but I have found resources that help on different areas:
+
+* http://angular-tips.com/blog/2015/06/using-angular-1-dot-x-with-es6-and-webpack/
+* http://www.django-rest-framework.org/
+* http://blog.thoughtram.io/angularjs/es6/2015/01/23/exploring-angular-1.3-using-es6.html
