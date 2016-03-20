@@ -16,7 +16,7 @@ For all other dependencies refer to the `project/requirements.txt` and `ng/packa
 1. Clone the project repository:
 
   ```bash
-  git clone https://github.com/davidvuong/django-bp
+  git clone git@github.com:davidvuong/django-bp.git
   ```
 
 1. Create a virtualenv for your project:
